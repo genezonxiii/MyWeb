@@ -15,6 +15,16 @@
     <url-pattern>/index</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <description></description>
+    <display-name>Questionnaire</display-name>
+    <servlet-name>Questionnaire</servlet-name>
+    <servlet-class>tw.com.myweb.Questionnaire</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Questionnaire</servlet-name>
+    <url-pattern>/quest</url-pattern>
+  </servlet-mapping>  
   <filter>
     <filter-name>RequestLoggingFilter</filter-name>
     <filter-class>tw.com.myweb.RequestLoggingFilter</filter-class>
@@ -23,7 +33,6 @@
     <filter-name>AuthenticationFilter</filter-name>
     <filter-class>tw.com.myweb.AuthenticationFilter</filter-class>
   </filter>
-  
   <filter-mapping>
     <filter-name>RequestLoggingFilter</filter-name>
     <url-pattern>/*</url-pattern>

@@ -13,7 +13,7 @@
 	特提供「拓銷資源快速導航」，只要花2分鐘填寫線上問卷，就可以立即獲得符合公司需求的拓銷資源建議報告
 	，讓您一次掌握各項拓銷資源，加速海外布局!!
 	</p>
-	<form action="">
+	<form action="quest">
 		<div class="company_info">
 			<label for="company_name">公司名稱</label><input id="company_name">
 			<label for="company_id">統編</label><input id="company_id">
@@ -105,7 +105,53 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script>
 		$(function(){
-			$("[name=q4]:checked")
+			
+			$("[name=q4]").click(function(){
+				if ($("[name=q4]:checked").size()>5){
+					alert('複選題，至多5項');
+					return false;
+				}
+			});
+			
+			$( "form" ).submit(function( event ) {
+			  submitForm();
+			  event.preventDefault();
+			});
+			
+			submitForm = function(){
+				var company_name = $('#company_name').val(),
+					company_id = $('#company_id').val(),
+					company_address = $('#company_address').val(),
+					company_username = $('#company_username').val(),
+					company_position = $('#company_position').val(),
+					company_phone = $('#company_phone').val(),
+					company_email = $('#company_email').val(),
+					q1 = $('[name=q1]:checked').val(),
+					q2 = 2,
+					q3 = $('[name=q3]:checked').val(),
+					q4 = 4,  
+					q5 = $('[name=q5]:checked').val();
+				
+				var data = {
+					company_name: company_name,
+					company_id: company_id,
+					company_address: company_address,
+					company_username: company_username,
+					company_position: company_position,
+					company_phone: company_phone,
+					company_email: company_email,
+					q1: q1,
+					q2: q2,
+					q3: q3,
+					q4: q4,
+					q5: q5
+				};
+				
+				console.log(data);
+				$.post('quest', data, function(){
+					alert('感謝您撥冗填寫問卷！');
+				});
+			}
 		})
 	</script>
 </body>
