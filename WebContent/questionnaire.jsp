@@ -34,17 +34,17 @@
 		
 		<div class="quest">
 			<p>Q2：貴公司近3年曾出口東協、印度哪些國家?(複選 )</p>
-			<input id="q2_01" name="q2" type="checkbox" value="Y"><label for="q2_01">印尼</label>
-			<input id="q2_02" name="q2" type="checkbox" value="N"><label for="q2_02">越南</label>
-			<input id="q2_03" name="q2" type="checkbox" value="N"><label for="q2_03">馬來西亞</label>
-			<input id="q2_04" name="q2" type="checkbox" value="N"><label for="q2_04">泰國</label>
-			<input id="q2_05" name="q2" type="checkbox" value="Y"><label for="q2_05">菲律賓</label>
-			<input id="q2_06" name="q2" type="checkbox" value="N"><label for="q2_06">新加坡</label>
-			<input id="q2_07" name="q2" type="checkbox" value="N"><label for="q2_07">緬甸</label>
-			<input id="q2_08" name="q2" type="checkbox" value="N"><label for="q2_08">寮國</label>
-			<input id="q2_09" name="q2" type="checkbox" value="Y"><label for="q2_09">柬普寨</label>
-			<input id="q2_10" name="q2" type="checkbox" value="N"><label for="q2_10">汶萊</label>
-			<input id="q2_11" name="q2" type="checkbox" value="N"><label for="q2_11">印度</label>
+			<input id="q2_01" name="q2" type="checkbox" value="01"><label for="q2_01">印尼</label>
+			<input id="q2_02" name="q2" type="checkbox" value="02"><label for="q2_02">越南</label>
+			<input id="q2_03" name="q2" type="checkbox" value="03"><label for="q2_03">馬來西亞</label>
+			<input id="q2_04" name="q2" type="checkbox" value="04"><label for="q2_04">泰國</label>
+			<input id="q2_05" name="q2" type="checkbox" value="05"><label for="q2_05">菲律賓</label>
+			<input id="q2_06" name="q2" type="checkbox" value="06"><label for="q2_06">新加坡</label>
+			<input id="q2_07" name="q2" type="checkbox" value="07"><label for="q2_07">緬甸</label>
+			<input id="q2_08" name="q2" type="checkbox" value="08"><label for="q2_08">寮國</label>
+			<input id="q2_09" name="q2" type="checkbox" value="09"><label for="q2_09">柬普寨</label>
+			<input id="q2_10" name="q2" type="checkbox" value="10"><label for="q2_10">汶萊</label>
+			<input id="q2_11" name="q2" type="checkbox" value="11"><label for="q2_11">印度</label>
 		</div>
 		
 		<div class="quest">
@@ -127,10 +127,20 @@
 					company_phone = $('#company_phone').val(),
 					company_email = $('#company_email').val(),
 					q1 = $('[name=q1]:checked').val(),
-					q2 = 2,
+					q2 = "",
 					q3 = $('[name=q3]:checked').val(),
-					q4 = 4,  
+					q4 = "",  
 					q5 = $('[name=q5]:checked').val();
+				
+				let ar_q2 = [], ar_q4 = [];
+				$('[name=q2]:checked').each(function(){
+					ar_q2.push($(this).prop("value"));
+				});
+				q2 = ar_q2.join(",");
+				$('[name=q4]:checked').each(function(){
+					ar_q4.push($(this).prop("value"));
+				});
+				q4 = ar_q4.join(",");
 				
 				var data = {
 					company_name: company_name,
@@ -147,7 +157,6 @@
 					q5: q5
 				};
 				
-				console.log(data);
 				$.post('quest', data, function(){
 					alert('感謝您撥冗填寫問卷！');
 				});
