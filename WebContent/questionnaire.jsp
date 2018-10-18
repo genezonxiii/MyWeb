@@ -26,25 +26,25 @@
 		
 		<div class="quest">
 			<p>Q1：貴公司近3年是否出口至東協、印度市場？</p>
-			<input id="q1_y" name="q1" type="radio" value="Y">
+			<input id="q1_y" name="q1" type="radio" value="1">
 			<label for="q1_y">是</label>
-			<input id="q1_n" name="q1" type="radio" value="N">
+			<input id="q1_n" name="q1" type="radio" value="0">
 			<label for="q1_n">否(直接跳至Q3)</label>
 		</div>
 		
 		<div class="quest">
 			<p>Q2：貴公司近3年曾出口東協、印度哪些國家?(複選 )</p>
-			<input id="q2_01" name="q2" type="checkbox" value="01"><label for="q2_01">印尼</label>
-			<input id="q2_02" name="q2" type="checkbox" value="02"><label for="q2_02">越南</label>
-			<input id="q2_03" name="q2" type="checkbox" value="03"><label for="q2_03">馬來西亞</label>
-			<input id="q2_04" name="q2" type="checkbox" value="04"><label for="q2_04">泰國</label>
-			<input id="q2_05" name="q2" type="checkbox" value="05"><label for="q2_05">菲律賓</label>
-			<input id="q2_06" name="q2" type="checkbox" value="06"><label for="q2_06">新加坡</label>
-			<input id="q2_07" name="q2" type="checkbox" value="07"><label for="q2_07">緬甸</label>
-			<input id="q2_08" name="q2" type="checkbox" value="08"><label for="q2_08">寮國</label>
-			<input id="q2_09" name="q2" type="checkbox" value="09"><label for="q2_09">柬普寨</label>
-			<input id="q2_10" name="q2" type="checkbox" value="10"><label for="q2_10">汶萊</label>
-			<input id="q2_11" name="q2" type="checkbox" value="11"><label for="q2_11">印度</label>
+			<input id="q2_01" name="q2" type="checkbox" value="印尼"><label for="q2_01">印尼</label>
+			<input id="q2_02" name="q2" type="checkbox" value="越南"><label for="q2_02">越南</label>
+			<input id="q2_03" name="q2" type="checkbox" value="馬來西亞"><label for="q2_03">馬來西亞</label>
+			<input id="q2_04" name="q2" type="checkbox" value="泰國"><label for="q2_04">泰國</label>
+			<input id="q2_05" name="q2" type="checkbox" value="菲律賓"><label for="q2_05">菲律賓</label>
+			<input id="q2_06" name="q2" type="checkbox" value="新加坡"><label for="q2_06">新加坡</label>
+			<input id="q2_07" name="q2" type="checkbox" value="緬甸"><label for="q2_07">緬甸</label>
+			<input id="q2_08" name="q2" type="checkbox" value="寮國"><label for="q2_08">寮國</label>
+			<input id="q2_09" name="q2" type="checkbox" value="柬普寨"><label for="q2_09">柬普寨</label>
+			<input id="q2_10" name="q2" type="checkbox" value="汶萊"><label for="q2_10">汶萊</label>
+			<input id="q2_11" name="q2" type="checkbox" value="印度"><label for="q2_11">印度</label>
 		</div>
 		
 		<div class="quest">
@@ -95,8 +95,8 @@
 
 		<div class="quest">
 			<p>Q5：請問您是否願意後續專人連絡以進一步提供政府拓銷資源說明?</p>
-			<input id="q5_y" name="q5" type="radio" value="Y"><label for="q5_y">願意</label>
-			<input id="q5_n" name="q5" type="radio" value="N"><label for="q5_n">不願意</label>
+			<input id="q5_y" name="q5" type="radio" value="1"><label for="q5_y">願意</label>
+			<input id="q5_n" name="q5" type="radio" value="0"><label for="q5_n">不願意</label>
 		</div>
 		
 		<input type="submit" value="送出" /> 
@@ -105,7 +105,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script>
 		$(function(){
-			
 			$("[name=q4]").click(function(){
 				if ($("[name=q4]:checked").size()>5){
 					alert('複選題，至多5項');
