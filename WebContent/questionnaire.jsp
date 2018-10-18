@@ -5,6 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>進擊新南向 擁抱大市場 問卷調查</title>
+<style type="text/css">
+html, body{
+	font-family: "微軟正黑體", "Microsoft JhengHei", "LiHei Pro", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    text-rendering: optimizeLegibility;
+    width: 100%;
+}
+p {
+	margin: 0;
+	font-weight: bold;
+	padding: 0.5em;
+}
+.quest {
+	display: block;
+	margin-top: 3em;
+	background: #62E0E9;
+}
+.company_info label,input:not([type=checkbox]):not([type=radio]) {
+	display: block;
+	width: 100%;
+	margin-top: 0;
+}
+/*Checkbox*/
+input[type=checkbox] {
+    position: absolute;
+    left: -9999px;
+    /*Disabled*/
+    /*Checked*/
+}
+input[type=checkbox] + label {
+    height: 32px;
+    margin: 0;
+    margin-right: 10px;
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0px 0px 0px 28px;
+    cursor: pointer;
+    /*Checkbox setup*/
+}
+input[type=checkbox] + label:before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: -12px 0 0;
+    width: 24px;
+    height: 24px;
+    background-image: url(./images/checkbox.svg);
+    background-repeat: no-repeat;
+}
+input[type=checkbox]:disabled, input[type=checkbox].readonly {
+    /*Disabled checked*/
+}
+input[type=checkbox]:disabled + label, input[type=checkbox].readonly + label {
+    cursor: not-allowed;
+    color: #666;
+}
+input[type=checkbox]:disabled + label:before, input[type=checkbox].readonly + label:before {
+    background-position: -48px 0;
+}
+input[type=checkbox]:disabled:checked + label, input[type=checkbox].readonly:checked + label {}
+input[type=checkbox]:disabled:checked + label:before, input[type=checkbox].readonly:checked + label:before {
+    background-position: -72px 0;
+}
+input[type=checkbox]:checked + label {}
+input[type=checkbox]:checked + label:before {
+    background-position: -24px 0;
+}
+/*Radio Button*/
+input[type=radio] {
+    position: absolute;
+    left: -9999px;
+    /*Disabled*/
+    /*Checked*/
+}
+input[type=radio] + label {
+    box-sizing: border-box;
+    height: 32px;
+    margin: 0;
+    margin-right: 10px;
+    padding: 1px 0;
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0px 0px 0px 28px;
+    cursor: pointer;
+}
+input[type=radio] + label:before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: -12px 0 0;
+    width: 24px;
+    height: 24px;
+    background-image: url(./images/radiobutton.svg);
+    background-repeat: no-repeat;
+}
+input[type=radio]:focus {}
+input[type=radio]:focus:before {
+    background-position: -72px 0;
+}
+input[type=radio]:disabled, input[type=radio].readonly {
+    /*Disabled checked*/
+}
+input[type=radio]:disabled + label, input[type=radio].readonly + label {
+    cursor: not-allowed;
+    color: #666;
+}
+input[type=radio]:disabled + label:before, input[type=radio].readonly + label:before {
+    background-position: -48px 0;
+}
+input[type=radio]:disabled:checked + label, input[type=radio].readonly:checked + label {
+    border-bottom: none;
+}
+input[type=radio]:disabled:checked + label:before, input[type=radio].readonly:checked + label:before {
+    background-position: -72px 0;
+}
+input[type=radio]:checked + label {
+    /*border-bottom: 2px solid var(--midBlue);*/
+}
+input[type=radio]:checked + label:before {
+    background-position: -24px 0;
+}
+</style>
 </head>
 <body>
 	<p>
@@ -15,13 +143,13 @@
 	</p>
 	<form action="quest">
 		<div class="company_info">
-			<label for="company_name">公司名稱</label><input id="company_name">
-			<label for="company_id">統編</label><input id="company_id">
-			<label for="company_address">地址</label><input id="company_address">
-			<label for="company_username">填寫人</label><input id="company_username">
-			<label for="company_position">職位</label><input id="company_position">
-			<label for="company_phone">電話：(市話/手機擇一填寫即可）</label><input id="company_phone">
-			<label for="company_email">E-mail</label><input id="company_email">
+			<input type="text" id="company_name"><label for="company_name">公司名稱</label>
+			<input type="text" id="company_id"><label for="company_id">統編</label>
+			<input type="text" id="company_address"><label for="company_address">地址</label>
+			<input type="text" id="company_username"><label for="company_username">填寫人</label>
+			<input type="text" id="company_position"><label for="company_position">職位</label>
+			<input type="text" id="company_phone"><label for="company_phone">電話：(市話/手機擇一填寫即可）</label>
+			<input type="text" id="company_email"><label for="company_email">E-mail</label>
 		</div>
 		
 		<div class="quest">
@@ -105,6 +233,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script>
 		$(function(){
+			$("[name=q1]").click(function(){
+				if ($("[name=q1]:checked").val() == 0){
+					$("[name=q2]").attr("disabled", true);
+				} else {
+					$("[name=q2]").removeAttr('disabled');
+				}
+			});
+			
 			$("[name=q4]").click(function(){
 				if ($("[name=q4]:checked").size()>5){
 					alert('複選題，至多5項');
