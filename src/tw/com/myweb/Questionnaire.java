@@ -1,6 +1,11 @@
 package tw.com.myweb;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Date;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
@@ -17,8 +22,7 @@ public class Questionnaire extends HttpServlet {
 			"?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
 	private static final String username = "root";
 	private static final String pwd = "admin123";
-	
-       
+	   
     public Questionnaire() {
         super();
     }
@@ -43,7 +47,12 @@ public class Questionnaire extends HttpServlet {
 		String q3 = request.getParameter("q3");
 		String q4 = request.getParameter("q4");
 		String q5 = request.getParameter("q5");
+		String anyElse = request.getParameter("any_else");
+		
 		String ipaddr = request.getRemoteAddr();
+		System.out.println(request.getRemoteAddr());
+		System.out.println(request.getRemoteHost());
+		
 		
 		Quest quest = new Quest();
 		quest.setCompany(company_name);
@@ -58,6 +67,7 @@ public class Questionnaire extends HttpServlet {
 		quest.setQ3(q3);
 		quest.setQ4(q4);
 		quest.setQ5(q5);
+		quest.setAnyElse(anyElse);
 		quest.setIpaddr(ipaddr);
 		
 		QuestDao dao = new QuestDao();
@@ -66,8 +76,8 @@ public class Questionnaire extends HttpServlet {
 	
 	class QuestDao {
 		private static final String sp_insert_quest = "INSERT INTO `tb_survey` "+
-				"(`survey_id`, `company`, `unicode`, `address`, `writer`, `jobtitle`, `tel`, `email`, `q1`, `q2`, `q3`, `q4`, `q5`, `recodetime`, `ipaddr`) " + 
-				"values (uuid(),?,?,?,?,?,?,?,?,?,?,?,?,now(),?)";
+				"(`survey_id`, `company`, `unicode`, `address`, `writer`, `jobtitle`, `tel`, `email`, `q1`, `q2`, `q3`, `q4`, `q5`, `any_else`, `recodetime`, `ipaddr`) " + 
+				"values (uuid(),?,?,?,?,?,?,?,?,?,?,?,?,?,now(),?)";
 		
 		public void insert(Quest quest) {
 			Connection con = null;
@@ -91,6 +101,7 @@ public class Questionnaire extends HttpServlet {
 				pstmt.setString(idx++, quest.getQ3());
 				pstmt.setString(idx++, quest.getQ4());
 				pstmt.setString(idx++, quest.getQ5());
+				pstmt.setString(idx++, quest.getAnyElse());
 				pstmt.setString(idx++, quest.getIpaddr());
 				
 				pstmt.executeUpdate();
@@ -128,6 +139,7 @@ public class Questionnaire extends HttpServlet {
 		private String q3;
 		private String q4;
 		private String q5;
+		private String anyElse;
 		private Date recodetime;
 		private String ipaddr;
 		public String getCompany() {
@@ -202,6 +214,12 @@ public class Questionnaire extends HttpServlet {
 		public void setQ5(String q5) {
 			this.q5 = q5;
 		}
+		public String getAnyElse() {
+			return anyElse;
+		}
+		public void setAnyElse(String anyElse) {
+			this.anyElse = anyElse;
+		}
 		public Date getRecodetime() {
 			return recodetime;
 		}
@@ -214,7 +232,6 @@ public class Questionnaire extends HttpServlet {
 		public void setIpaddr(String ipaddr) {
 			this.ipaddr = ipaddr;
 		}
-		
 	}
 
 }
