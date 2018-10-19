@@ -4,137 +4,13 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>進擊新南向 擁抱大市場 問卷調查</title>
-<style type="text/css">
-html, body{
-	font-family: "微軟正黑體", "Microsoft JhengHei", "LiHei Pro", Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    text-rendering: optimizeLegibility;
-    width: 100%;
-}
-p {
-	margin: 0;
-	font-weight: bold;
-	padding: 0.5em;
-}
-.quest {
-	display: block;
-	margin-top: 3em;
-	background: #62E0E9;
-}
-.company_info label,input:not([type=checkbox]):not([type=radio]) {
-	display: block;
-	width: 100%;
-	margin-top: 0;
-}
-/*Checkbox*/
-input[type=checkbox] {
-    position: absolute;
-    left: -9999px;
-    /*Disabled*/
-    /*Checked*/
-}
-input[type=checkbox] + label {
-    height: 32px;
-    margin: 0;
-    margin-right: 10px;
-    position: relative;
-    display: block;
-    float: left;
-    padding: 0px 0px 0px 28px;
-    cursor: pointer;
-    /*Checkbox setup*/
-}
-input[type=checkbox] + label:before {
-    display: block;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    margin: -12px 0 0;
-    width: 24px;
-    height: 24px;
-    background-image: url(./images/checkbox.svg);
-    background-repeat: no-repeat;
-}
-input[type=checkbox]:disabled, input[type=checkbox].readonly {
-    /*Disabled checked*/
-}
-input[type=checkbox]:disabled + label, input[type=checkbox].readonly + label {
-    cursor: not-allowed;
-    color: #666;
-}
-input[type=checkbox]:disabled + label:before, input[type=checkbox].readonly + label:before {
-    background-position: -48px 0;
-}
-input[type=checkbox]:disabled:checked + label, input[type=checkbox].readonly:checked + label {}
-input[type=checkbox]:disabled:checked + label:before, input[type=checkbox].readonly:checked + label:before {
-    background-position: -72px 0;
-}
-input[type=checkbox]:checked + label {}
-input[type=checkbox]:checked + label:before {
-    background-position: -24px 0;
-}
-/*Radio Button*/
-input[type=radio] {
-    position: absolute;
-    left: -9999px;
-    /*Disabled*/
-    /*Checked*/
-}
-input[type=radio] + label {
-    box-sizing: border-box;
-    height: 32px;
-    margin: 0;
-    margin-right: 10px;
-    padding: 1px 0;
-    position: relative;
-    display: block;
-    float: left;
-    padding: 0px 0px 0px 28px;
-    cursor: pointer;
-}
-input[type=radio] + label:before {
-    display: block;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    margin: -12px 0 0;
-    width: 24px;
-    height: 24px;
-    background-image: url(./images/radiobutton.svg);
-    background-repeat: no-repeat;
-}
-input[type=radio]:focus {}
-input[type=radio]:focus:before {
-    background-position: -72px 0;
-}
-input[type=radio]:disabled, input[type=radio].readonly {
-    /*Disabled checked*/
-}
-input[type=radio]:disabled + label, input[type=radio].readonly + label {
-    cursor: not-allowed;
-    color: #666;
-}
-input[type=radio]:disabled + label:before, input[type=radio].readonly + label:before {
-    background-position: -48px 0;
-}
-input[type=radio]:disabled:checked + label, input[type=radio].readonly:checked + label {
-    border-bottom: none;
-}
-input[type=radio]:disabled:checked + label:before, input[type=radio].readonly:checked + label:before {
-    background-position: -72px 0;
-}
-input[type=radio]:checked + label {
-    /*border-bottom: 2px solid var(--midBlue);*/
-}
-input[type=radio]:checked + label:before {
-    background-position: -24px 0;
-}
-</style>
+<link rel="stylesheet" href="css/quest.css">
+<title>拓銷資源線上測驗問卷</title>
 </head>
 <body>
+	<h2>
+	拓銷資源線上測驗問卷
+	</h2>
 	<p>
 	參與「進擊新南向 擁抱大市場」國際論壇的業者有福了~經濟部國際貿易局為協助廠商出口，
 	規劃辦理許多海外拓銷活動，為服務參與本次論壇有志拓展東協、印度市場的業者，
@@ -143,25 +19,25 @@ input[type=radio]:checked + label:before {
 	</p>
 	<form action="quest">
 		<div class="company_info">
-			<input type="text" id="company_name"><label for="company_name">公司名稱</label>
-			<input type="text" id="company_id"><label for="company_id">統編</label>
-			<input type="text" id="company_address"><label for="company_address">地址</label>
-			<input type="text" id="company_username"><label for="company_username">填寫人</label>
-			<input type="text" id="company_position"><label for="company_position">職位</label>
-			<input type="text" id="company_phone"><label for="company_phone">電話：(市話/手機擇一填寫即可）</label>
-			<input type="text" id="company_email"><label for="company_email">E-mail</label>
+			<label for="company_name">公司名稱</label><input type="text" id="company_name">
+			<label for="company_id">統編</label><input type="text" id="company_id">
+			<label for="company_address">地址</label><input type="text" id="company_address">
+			<label for="company_username">填寫人</label><input type="text" id="company_username">
+			<label for="company_position">職位</label><input type="text" id="company_position">
+			<label for="company_phone">電話：(市話/手機擇一填寫即可）</label><input type="text" id="company_phone">
+			<label for="company_email">E-mail</label><input type="text" id="company_email">
 		</div>
 		
-		<div class="quest">
-			<p>Q1：貴公司近3年是否出口至東協、印度市場？</p>
+		<div class="quest1">
+			<p>Q1：貴公司<u>近<font color="red">3</font>年是否出口至東協、印度市場</u>？</p>
 			<input id="q1_y" name="q1" type="radio" value="1">
 			<label for="q1_y">是</label>
 			<input id="q1_n" name="q1" type="radio" value="0">
 			<label for="q1_n">否(直接跳至Q3)</label>
 		</div>
 		
-		<div class="quest">
-			<p>Q2：貴公司近3年曾出口東協、印度哪些國家?(複選 )</p>
+		<div class="quest2">
+			<p>Q2：貴公司<u>近3年曾出口東協、印度哪些國家</u>?(複選 )</p>
 			<input id="q2_01" name="q2" type="checkbox" value="印尼"><label for="q2_01">印尼</label>
 			<input id="q2_02" name="q2" type="checkbox" value="越南"><label for="q2_02">越南</label>
 			<input id="q2_03" name="q2" type="checkbox" value="馬來西亞"><label for="q2_03">馬來西亞</label>
@@ -175,8 +51,8 @@ input[type=radio]:checked + label:before {
 			<input id="q2_11" name="q2" type="checkbox" value="印度"><label for="q2_11">印度</label>
 		</div>
 		
-		<div class="quest">
-			<p>Q3：請問 貴公司的主力出口產品類別為：（單選）</p>
+		<div class="quest3">
+			<p>Q3：請問 貴公司的<u>主力出口產品</u>類別為：（單選）</p>
 			<input id="q3_01" name="q3" type="radio" value="01"><label for="q3_01">01：調製食品；飲料及菸類</label>
 			<input id="q3_02" name="q3" type="radio" value="02"><label for="q3_02">02：礦產品</label>
 			<input id="q3_03" name="q3" type="radio" value="03"><label for="q3_03">03：化學品</label>
@@ -198,11 +74,14 @@ input[type=radio]:checked + label:before {
 			<input id="q3_19" name="q3" type="radio" value="19"><label for="q3_19">19：家具</label>
 			<input id="q3_20" name="q3" type="radio" value="20"><label for="q3_20">20：美妝保養品</label>
 			<input id="q3_21" name="q3" type="radio" value="21"><label for="q3_21">21：服務業</label>
-			<input id="q3_22" name="q3" type="radio" value="22"><label for="q3_22">22：其他</label>
+			<div class="q3_22">
+				<input id="q3_22" name="q3" type="radio" value="22"><label for="q3_22">22：其他</label>
+				<input type="text" id="q3_22_any_else">
+			</div>
 		</div>
 		
-		<div class="quest">
-			<p>Q4.請問您認為 貴公司拓展東協、印度需要那些拓銷資源？(複選題，至多5項)</p>
+		<div class="quest4">
+			<p>Q4.請問您認為 貴公司<u>拓展東協、印度需要那些拓銷資源</u>？(複選題，<font color="red">至多5項</font>)</p>
 			<input id="q4_01" name="q4" type="checkbox" value="01"><label for="q4_01">海外展團拓銷（如參展/拓銷團、參展補助等）</label>
 			<input id="q4_02" name="q4" type="checkbox" value="02"><label for="q4_02">買主採購機會（如採購洽談會或媒合會）</label>
 			<input id="q4_03" name="q4" type="checkbox" value="03"><label for="q4_03">海外據點服務(如貿協海外據點服務、駐外開發市場商機)</label>
@@ -221,82 +100,18 @@ input[type=radio]:checked + label:before {
 			<input id="q4_16" name="q4" type="checkbox" value="16"><label for="q4_16">清真產品推廣計畫</label>
 		</div>
 
-		<div class="quest">
+		<div class="quest5">
 			<p>Q5：請問您是否願意後續專人連絡以進一步提供政府拓銷資源說明?</p>
 			<input id="q5_y" name="q5" type="radio" value="1"><label for="q5_y">願意</label>
 			<input id="q5_n" name="q5" type="radio" value="0"><label for="q5_n">不願意</label>
 		</div>
 		
-		<input type="submit" value="送出" /> 
+		<div class="btn">
+			<input type="submit" value="送出" /> 
+		</div>
 	</form>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script>
-		$(function(){
-			$("[name=q1]").click(function(){
-				if ($("[name=q1]:checked").val() == 0){
-					$("[name=q2]").attr("disabled", true);
-				} else {
-					$("[name=q2]").removeAttr('disabled');
-				}
-			});
-			
-			$("[name=q4]").click(function(){
-				if ($("[name=q4]:checked").size()>5){
-					alert('複選題，至多5項');
-					return false;
-				}
-			});
-			
-			$( "form" ).submit(function( event ) {
-			  submitForm();
-			  event.preventDefault();
-			});
-			
-			submitForm = function(){
-				var company_name = $('#company_name').val(),
-					company_id = $('#company_id').val(),
-					company_address = $('#company_address').val(),
-					company_username = $('#company_username').val(),
-					company_position = $('#company_position').val(),
-					company_phone = $('#company_phone').val(),
-					company_email = $('#company_email').val(),
-					q1 = $('[name=q1]:checked').val(),
-					q2 = "",
-					q3 = $('[name=q3]:checked').val(),
-					q4 = "",  
-					q5 = $('[name=q5]:checked').val();
-				
-				let ar_q2 = [], ar_q4 = [];
-				$('[name=q2]:checked').each(function(){
-					ar_q2.push($(this).prop("value"));
-				});
-				q2 = ar_q2.join(",");
-				$('[name=q4]:checked').each(function(){
-					ar_q4.push($(this).prop("value"));
-				});
-				q4 = ar_q4.join(",");
-				
-				var data = {
-					company_name: company_name,
-					company_id: company_id,
-					company_address: company_address,
-					company_username: company_username,
-					company_position: company_position,
-					company_phone: company_phone,
-					company_email: company_email,
-					q1: q1,
-					q2: q2,
-					q3: q3,
-					q4: q4,
-					q5: q5
-				};
-				
-				$.post('quest', data, function(){
-					alert('感謝您撥冗填寫問卷！');
-				});
-			}
-		})
-	</script>
+	<script src="js/quest.js"></script>
 </body>
 </html>

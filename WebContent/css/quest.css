@@ -1,0 +1,264 @@
+html, body{
+	font-family: "微軟正黑體", "Microsoft JhengHei", "LiHei Pro", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    text-rendering: optimizeLegibility;
+    width: 90%;
+    padding: 0.5em;
+}
+p {
+	margin: 0;
+	font-weight: bold;
+	padding: 0.5em;
+}
+.quest1 {
+	display: block;
+	margin-top: 3em;
+	background: #62E0E9;
+	padding: 0.5em;
+	height: 6em;
+}
+@media (min-width: 35em) {
+	.quest1 {
+		height: 4em;
+	}
+}
+.quest2 {
+	display: block;
+	margin-top: 3em;
+	background: #62E0E9;
+	padding: 0.5em;
+	height: 18em;
+}
+@media (min-width: 35em) {
+	.quest2 {
+		height: 13em;
+	}
+}
+@media (min-width: 50em) {
+	.quest2 {
+		height: 9em;
+	}
+}
+@media (min-width: 80em) {
+	.quest2 {
+		height: 4em;
+	}
+}
+.quest3 {
+	display: block;
+	margin-top: 3em;
+	background: #62E0E9;
+	padding: 0.5em;
+	height: 114em;
+}
+@media (min-width: 35em) {
+	.quest3 {
+		height: 83em;
+	}
+}
+@media (min-width: 50em) {
+	.quest3 {
+		height: 59em;
+	}
+}
+@media (min-width: 64em) {
+	.quest3 {
+		height: 47em;
+	}
+}
+@media (min-width: 80em) {
+	.quest3 {
+		height: 29em;
+	}
+}
+@media (min-width: 120em) {
+	.quest3 {
+		height: 23em;
+	}
+}
+.quest4 {
+	display: block;
+	margin-top: 3em;
+	background: #62E0E9;
+	padding: 0.5em;
+	height: 67em;
+}
+@media (min-width: 35em) {
+	.quest4 {
+		height: 55em;
+	}
+}
+@media (min-width: 50em) {
+	.quest4 {
+		height: 45em;
+	}
+}
+@media (min-width: 64em) {
+	.quest4 {
+		height: 29em;
+	}
+}
+@media (min-width: 80em) {
+	.quest4 {
+		height: 24em;
+	}
+}
+@media (min-width: 100em) {
+	.quest4 {
+		height: 20em;
+	}
+}
+@media (min-width: 120em) {
+	.quest4 {
+		height: 16em;
+	}
+}
+.quest5 {
+	display: block;
+	margin-top: 3em;
+	background: #62E0E9;
+	padding: 0.5em;
+	height: 8em;
+}
+@media (min-width: 35em) {
+	.quest5 {
+		height: 6em;
+	}
+}
+@media (min-width: 50em) {
+	.quest5 {
+		height: 4em;
+	}
+}
+.btn {
+	display: block;
+	margin-top: 3em;
+	margin-bottom: 3em;
+	background: #62E0E9;
+	padding: 0.2em;
+	height: 2.8em;
+}
+.company_info label,input:not([type=checkbox]):not([type=radio]) {
+	display: block;
+	width: 90%;
+	height: 2em;
+	margin: 0.5em 0em 0.5em 1em;
+	font-family: "微軟正黑體", "Microsoft JhengHei", "LiHei Pro", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    text-rendering: optimizeLegibility;
+}
+.q3_22 {
+	display: inline-block;
+	float: left;
+}
+#q3_22_any_else {
+	display: none;
+	float: left;
+	width: 7.5em;
+	margin: -0.2em;
+}
+/*Checkbox*/
+input[type=checkbox] {
+    position: absolute;
+    left: -9999px;
+    /*Disabled*/
+    /*Checked*/
+}
+input[type=checkbox] + label {
+    height: 4em;
+    margin: 0;
+    margin-right: 10px;
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0px 0px 0px 28px;
+    cursor: pointer;
+    /*Checkbox setup*/
+}
+input[type=checkbox] + label:before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: -2em 0 0;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url(./images/checkbox.svg);
+    background-repeat: no-repeat;
+}
+input[type=checkbox]:disabled, input[type=checkbox].readonly {
+    /*Disabled checked*/
+}
+input[type=checkbox]:disabled + label, input[type=checkbox].readonly + label {
+    cursor: not-allowed;
+    color: #666;
+}
+input[type=checkbox]:disabled + label:before, input[type=checkbox].readonly + label:before {
+    background-position: -3em 0;
+}
+input[type=checkbox]:disabled:checked + label, input[type=checkbox].readonly:checked + label {}
+input[type=checkbox]:disabled:checked + label:before, input[type=checkbox].readonly:checked + label:before {
+    background-position: -4.5em 0;
+}
+input[type=checkbox]:checked + label {}
+input[type=checkbox]:checked + label:before {
+    background-position: -1.5em 0;
+}
+/*Radio Button*/
+input[type=radio] {
+    position: absolute;
+    left: -9999px;
+    /*Disabled*/
+    /*Checked*/
+}
+input[type=radio] + label {
+    box-sizing: border-box;
+    height: 6em;
+    margin: 0;
+    margin-right: 10px;
+    padding: 1px 0;
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0px 0px 0px 1.75em;
+    cursor: pointer;
+}
+input[type=radio] + label:before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: -3em 0 0;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url(./images/radiobutton.svg);
+    background-repeat: no-repeat;
+}
+input[type=radio]:focus {}
+input[type=radio]:focus:before {
+    background-position: -4.5em 0;
+}
+input[type=radio]:disabled, input[type=radio].readonly {
+    /*Disabled checked*/
+}
+input[type=radio]:disabled + label, input[type=radio].readonly + label {
+    cursor: not-allowed;
+    color: #666;
+}
+input[type=radio]:disabled + label:before, input[type=radio].readonly + label:before {
+    background-position: -3em 0;
+}
+input[type=radio]:disabled:checked + label, input[type=radio].readonly:checked + label {
+    border-bottom: none;
+}
+input[type=radio]:disabled:checked + label:before, input[type=radio].readonly:checked + label:before {
+    background-position: -4.5em 0;
+}
+input[type=radio]:checked + label {
+    /*border-bottom: 2px solid var(--midBlue);*/
+}
+input[type=radio]:checked + label:before {
+    background-position: -1.5em 0;
+}
